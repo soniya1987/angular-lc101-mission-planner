@@ -22,7 +22,11 @@ export class CrewComponent implements OnInit {
 
   add(name: string, isFirstMission: boolean)
   {
-    this.crew.push({name: name , firstMission : isFirstMission});
+    let newCrew = { name: name, firstMission: isFirstMission };
+    if (!this.crew.includes(newCrew))
+    {
+      this.crew.push({name: name , firstMission : isFirstMission});
+    }
   }
 
   remove(crewMember: object)
